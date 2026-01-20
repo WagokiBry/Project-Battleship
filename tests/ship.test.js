@@ -1,22 +1,22 @@
-import { ship } from '../src/ship.js';
+import { Ship } from '../src/ship.js';
 
 
 
-test('ship starts with zero hit', () => {
-  let testShip = new ship();
+test('Ship starts with zero hit', () => {
+  let testShip = new Ship();
   expect(testShip.hits).toBe(0);
 });
 
 test('increasing hit method', () => {
-  let testShip = new ship();
+  let testShip = new Ship();
   testShip.hit();
 
   expect(testShip.hits).toBe(1);
   
 });
 
-test('checking if ship is sunk', () => {
-  let testShip = new ship();
+test('checking if Ship is sunk', () => {
+  let testShip = new Ship();
   testShip.hit();
   testShip.hit();
   testShip.hit();

@@ -12,6 +12,7 @@ export class Gameboard{
             this.grid.push(row)
         }
         this.misses = []
+        this.attackedCells = new Set()
     }
     placeShip(ship,row,col,direction){
 if(direction === "horizontal"){
@@ -27,7 +28,15 @@ if(direction === "horizontal"){
 }
 
 receiveAttack(row,col){
+    let key = `${row},${col}`
+    if(this.attackedCells.has(key)){
+        return
+    }
+    this.attackedCells.add(key)
+
    let target = this.grid[row][col]
+
+   
 
 if(target) { target.hit() }
 else if(!target){

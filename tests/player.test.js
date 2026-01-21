@@ -1,7 +1,7 @@
 
 import { Player } from "../src/player.js"
 import { Ship } from "../src/ship.js"
-import { Gameboard } from "../src/gameboard.js"
+// import { Gameboard } from "../src/gameboard.js"
 
 test("test if player exists with a gameboard",()=>{
     let player1 = new Player()
@@ -21,3 +21,4 @@ test("player can attack enemy gameboard",()=>{
     player1Board.attack(enemyPlayer,5,6)
     expect(enemyShip.hits).toBe(1)
 })
+

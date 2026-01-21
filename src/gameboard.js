@@ -35,4 +35,24 @@ this.misses.push([row,col])
 }
 }
 
+allShipsSunk(){
+   let seenShips = new Set();
+
+ for(let row = 0; row < this.grid.length;row++){
+    for(let col = 0; col < this.grid[row].length;col++){
+let cell = this.grid[row][col]
+if(cell !==null){
+    seenShips.add(cell)
+}
+    }
+ }
+ for(let ship of seenShips){
+    if(!ship.isSunk()){
+        return false
+    }
+    
+ }
+ return true
+}
+
 }

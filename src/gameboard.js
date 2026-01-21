@@ -16,6 +16,10 @@ if(direction === "horizontal"){
     for (let i = 0; i < ship.length; i++){
         this.grid[row][col+i] = ship;
     }
+} else if(direction === "vertical"){
+    for (let i = 0; i < ship.length; i++){
+        this.grid[row+i][col] = ship;
+    }
 }
 
 }

@@ -35,4 +35,10 @@ test("players take turns attacking each other", () => {
     player2.gameboard.placeShip(ship2, 0, 0, "horizontal");
 
     // Next step: simulate the first attack
+    // Step 2: Player1 attacks Player2
+player1.attack(player2, 0, 0);
+
+// Check that the ship was hit
+expect(ship2.hits).toBe(1);
+
 });

@@ -34,7 +34,11 @@ test("receiveAttack hits a ship",()=>{
     gameboard.placeShip(ship,0,0,"vertical")
     gameboard.receiveAttack(0,0)
   expect(ship.hits).toBe(1)
- 
+ })
 
+ test("records missed attacks", () => {
+  let gameboard = new Gameboard(10);
+  gameboard.receiveAttack(0, 0);
+expect(gameboard.misses).toContainEqual([0, 0]);
 
-})
+});

@@ -22,3 +22,17 @@ test("player can attack enemy gameboard",()=>{
     expect(enemyShip.hits).toBe(1)
 })
 
+test("players take turns attacking each other", () => {
+    // Step 1: create players
+    let player1 = new Player();
+    let player2 = new Player();
+
+    // Step 2: add ships to both players' boards
+    let ship1 = new Ship(3);
+    let ship2 = new Ship(3);
+
+    player1.gameboard.placeShip(ship1, 0, 0, "horizontal");
+    player2.gameboard.placeShip(ship2, 0, 0, "horizontal");
+
+    // Next step: simulate the first attack
+});

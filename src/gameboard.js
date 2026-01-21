@@ -11,7 +11,7 @@ export class Gameboard{
             }
             this.grid.push(row)
         }
-        
+        this.misses = []
     }
     placeShip(ship,row,col,direction){
 if(direction === "horizontal"){

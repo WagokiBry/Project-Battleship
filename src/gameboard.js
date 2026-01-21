@@ -1,3 +1,5 @@
+import { Ship } from "./ship";
+
 // import { Ship } from "../src/ship.js";
 export class Gameboard{
     constructor(size){
@@ -22,5 +24,11 @@ if(direction === "horizontal"){
     }
 }
 
+}
+
+receiveAttack(row,col){
+   let target = this.grid[row][col]
+
+if(target) { target.hit() }
 }
 }

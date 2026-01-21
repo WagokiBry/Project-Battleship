@@ -15,4 +15,5 @@ test("placing a ship horizontally on the board",()=>{
     expect(gameboard.grid[0][0]).toEqual(ship)
     expect(gameboard.grid[0][1]).toEqual(ship)
     expect(gameboard.grid[0][2]).toEqual(ship)
+    expect(gameboard.grid[0][3]).toBeNull();
 })

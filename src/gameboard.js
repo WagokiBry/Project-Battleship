@@ -30,5 +30,9 @@ receiveAttack(row,col){
    let target = this.grid[row][col]
 
 if(target) { target.hit() }
+else if(!target){
+this.misses.push([row,col])
 }
+}
+
 }

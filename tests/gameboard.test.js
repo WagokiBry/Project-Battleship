@@ -66,3 +66,15 @@ carrier.hit()
 carrier.hit()
 expect(gameboard.allShipsSunk()).toBe(true);
 });
+
+test("cannot attack the same cell twice", () => {
+  let gameboard = new Gameboard(10);
+  let ship = new Ship(3);
+
+  gameboard.placeShip(ship, 0, 0, "vertical");
+
+  gameboard.receiveAttack(0, 0);
+  gameboard.receiveAttack(0, 0); // same cell again
+
+  expect(ship.hits).toBe(1);
+});

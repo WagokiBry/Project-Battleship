@@ -42,3 +42,27 @@ test("receiveAttack hits a ship",()=>{
 expect(gameboard.misses).toContainEqual([0, 0]);
 
 });
+
+test("allShipsSunk returns false if at least one ship is still afloat", () => {
+  let gameboard = new Gameboard(10);
+  let destroyer = new Ship(3);
+gameboard.placeShip(destroyer,0,0,"vertical")
+destroyer.hit()
+expect(gameboard.allShipsSunk()).toBe(false);
+});
+
+test("allShipsSunk returns true if all ships are sunk", () => {
+  let gameboard = new Gameboard(10);
+  let destroyer = new Ship(3);
+  let carrier = new Ship(4)
+gameboard.placeShip(destroyer,0,0,"vertical")
+gameboard.placeShip(carrier,6,4,"horizontal")
+destroyer.hit()
+destroyer.hit()
+destroyer.hit()
+carrier.hit()
+carrier.hit()
+carrier.hit()
+carrier.hit()
+expect(gameboard.allShipsSunk()).toBe(true);
+});

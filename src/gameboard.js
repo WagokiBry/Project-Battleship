@@ -1,3 +1,4 @@
+// import { Ship } from "../src/ship.js";
 export class Gameboard{
     constructor(size){
         this.grid = []
@@ -10,5 +11,12 @@ export class Gameboard{
         }
         
     }
+    placeShip(ship,row,col,direction){
+if(direction === "horizontal"){
+    for (let i = 0; i < ship.length; i++){
+        this.grid[row][col+i] = ship;
+    }
+}
 
+}
 }
